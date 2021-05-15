@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sitting Posture Coach</title>
+    <link rel="icon" type="image/png" href="media/icon.png">
+    <link rel="stylesheet" href="less-css/style.css">
+    <link rel="stylesheet" href="less-css/inference.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id='unsupported-overlay' class='overlay hidden'>
+        <p>
+            Your browser is not supported. 😕<br>
+            Please switch to the latest version of <a href="https://brave.com/">Brave</a> on a desktop or laptop.
+        </p>
+    </div>
+    <div id='loading-overlay' class='overlay hidden'>
+        <p>
+            Loading 😬 — just a second please...
+        </p>
+    </div>
+    <div id="wrapper">
+        <div id="camera-feed">
+            <canvas id="canvas" width="128" height="128"></canvas>
+            <video autoplay id='video'></video>
+        </div>
+        <div class="sliders">
+            <div id="value-slider"></div>
+            <div id="range-slider"></div>
+        </div>
+        <div class='train-info'>
+            Not happy with the results? <a href='/data'>Help us</a> improve the system.
+        </div>
+        <div class='footer'>
+            <span>This website was developed for a student project of the 2021 <a
+                    href='https://fullstackdeeplearning.com/'>Full Stack Deep Learning course</a>.</span>
+        </div>
+    </div>
+</body>
+
+</html>

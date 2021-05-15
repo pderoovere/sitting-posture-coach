@@ -1,0 +1,107 @@
+@import 'variables';
+
+.header {
+    span {
+        font-weight: bold;
+        font-size: 24px;
+        .bad {
+            color: @red;
+        }
+        .good {
+            color: @green;
+        }
+        span {
+            font-style: italic;
+            text-decoration: underline;
+        }
+        &#header-sub-text {
+            font-weight: normal;
+            font-size: 15px;
+            padding-top: 8px;
+            display: block;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
+    .modes {
+        width: 200px;
+        padding: 16px 48px 16px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        .mode {
+            width: 140px;
+            height: 108px;
+            border-radius: 8px;
+            opacity: 0.1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.active {
+                opacity: 1 !important;
+            }
+            &.good {
+                border: 1px solid @green;
+                background-color: fade(@green, 6%);
+            }
+            &.bad {
+                border: 1px solid @red;
+                background-color: fade(@red, 4%);
+            }
+        }
+    }
+    .camera-feed {
+        background-color: black;
+        border-radius: 8px;
+        width: 600px;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        video {
+            max-width: 600px;
+            max-height: 450px;
+        }
+    }
+    .actions {
+        width: 200px;
+        padding: 16px 16px 16px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        a {
+            width: 116px;
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: black;
+            img {
+                margin-bottom: 6px;
+            }
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+            &:active {
+                img { 
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.active {
+    opacity: 1 !important;
+}

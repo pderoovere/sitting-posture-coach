@@ -1,0 +1,105 @@
+@import 'variables';
+
+#loading-overlay {
+    font-weight: bold;
+    animation: loading 2s infinite;
+}
+
+#camera-feed {
+    border: 8px solid transparent;
+    #canvas {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+.sliders {
+    text-align: center;
+    width: 576px;
+    position: relative;
+    margin-top: 64px;
+    height: 32px;
+
+    #value-slider, #range-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .ui-slider {
+        height: 4px;
+        padding: 0;
+        margin: 0;
+        border: none !important;
+        background-color: @lightgray;
+        position: relative;
+    }
+
+    #value-slider {
+        &.ui-slider {
+            .ui-slider-handle {
+                background-color: @blue;
+                border: none !important;
+                width: 2px;
+                height: 32px;
+                margin: 0;
+                margin-left: -1px;
+                top: -14px;
+                outline: none !important;
+                animation: pulse-blue 2s infinite;
+            }
+        }
+    }
+    
+    #range-slider {
+        &.ui-slider {
+            .ui-slider-handle {
+                &:nth-child(2) {
+                    background-color: @red;
+                }
+                &:nth-child(3) {
+                    background-color: @green;
+                }
+                border: none;
+                width: 24px;
+                height: 24px;
+                border-radius: 12px;
+                margin: 0;
+                margin-left: -12px;
+                top: -10px;
+                filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.25));
+            }
+            .ui-slider-range {
+                border-radius: 0;
+                background: linear-gradient(90deg, @red 0%, @green 100%);
+            }
+        }
+    }
+}
+
+.train-info {
+    margin-top: 32px;
+}
+
+@keyframes pulse-blue {
+    0% {
+      transform: scale(0.9);
+      box-shadow: 0 0 6px 2px fade(@lightblue, 50);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 6px 2px fade(@lightblue, 100);
+    }
+    100% {
+      transform: scale(0.9);
+      box-shadow: 0 0 6px 2px fade(@lightblue, 50)
+    }
+  }
+
+@keyframes loading {
+    0% {   background-color: fade(mix(white, @green, 90%), 95%); }
+    50% {  background-color: fade(mix(white, @red, 90%), 95%);   }
+    100% { background-color: fade(mix(white, @green, 90%), 95%); }
+}
