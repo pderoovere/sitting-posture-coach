@@ -6,7 +6,7 @@ Maintaining a good sitting posture while working is extremely important. This is
 
 Sitting posture coach aims to provide a solution which is easy to set up and needs no additional infrastructure. A simple web page will provide feedback to help you attain a better sitting posture. It uses an AI system running locally in your browser (and thus preserving your privacy) that analyses live images from your webcam.
 
-This page will provide an overview of the architecture of the system. Visit [https://sitting-posture.coach](https://sitting-posture.coach) for a live version of the app, or take a look at [the setup instructions](setup) to set it up yourself.
+This page will provide an overview of the architecture of the system. Visit [https://rdaems.github.io/sitting-posture-coach/](https://rdaems.github.io/sitting-posture-coach/) for a live version of the app, or take a look at [the setup instructions](setup) to set it up yourself.
 
 ## High-Level Overview
 
@@ -20,7 +20,7 @@ A node.js app (running on Amazon LightSail) will serve web pages for inference a
 
 ![Data collection](docs/images/data_collection.jpg)
 
-Visit [https://sitting-posture.coach/data](https://sitting-posture.coach/data) to see the web app for data collection (and help improve our model while you're at it). The Media Capture and Stream API is used to show a live webcam stream and to record images whenever the record button is clicked. Note that an SSL-certificate is needed in order to use this API after deploying the app. Amazon Lightsail provides a [simplified way](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress) to set this up, provided a domain name is available.
+The Media Capture and Stream API is used to show a live webcam stream and to record images whenever the record button is clicked. Note that an SSL-certificate is needed in order to use this API after deploying the app. Amazon Lightsail provides a [simplified way](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress) to set this up, provided a domain name is available.
 
 Three sitting posture modes are used: a good posture, a bad posture leaning forward and a bad posture leaning backward.
 
